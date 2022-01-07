@@ -101,13 +101,13 @@ class SnippetList(APIView):
     List all snippets, or create a new snippet.
     """
     def get(self, request, format=None):
-        snippets = personal.objects.all()
-        serializer = PersonalSerializer(snippets, many=True)
+        snippets = products.objects.all()
+        serializer =ProductSerializer(snippets, many=True)
         return Response(serializer.data)
         
 
     def post(self, request, format=None):
-        serializer = PersonalSerializer(data=request.data)
+        serializer = ProductSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             
