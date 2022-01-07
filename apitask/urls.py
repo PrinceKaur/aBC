@@ -16,9 +16,9 @@ Including another URLconf
 from rest_framework.authtoken import views
 from django.contrib import admin
 # from knox import views as knox_views
-from API.apitask.task import views
+from task import views
 from django.urls import path,include
-from API.apitask.task.views import *
+from task.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('task/register/',SnippetList.as_view(), name='register'),
